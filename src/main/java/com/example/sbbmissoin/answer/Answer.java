@@ -1,5 +1,6 @@
-package com.example.sbbmissoin;
+package com.example.sbbmissoin.answer;
 
+import com.example.sbbmissoin.question.Question;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
