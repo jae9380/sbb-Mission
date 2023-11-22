@@ -1,6 +1,6 @@
-package com.example.sbbmissoin.question;
+package com.example.sbbmissoin.question.entity;
 
-import com.example.sbbmissoin.answer.Answer;
+import com.example.sbbmissoin.answer.entity.Answer;
 import jakarta.persistence.*;
 import lombok.Data;
 
