@@ -4,6 +4,7 @@ import com.example.sbbmissoin.answer.entity.Answer;
 import com.example.sbbmissoin.answer.repository.AnswerRepository;
 import com.example.sbbmissoin.question.entity.Question;
 import com.example.sbbmissoin.question.repository.QuestionRepository;
+import com.example.sbbmissoin.question.service.QuestionService;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,6 +20,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class SbbMissoinApplicationTests {
+
+    @Autowired
+    private QuestionService questionService;
 
     @Autowired
     private QuestionRepository questionRepository;
@@ -136,5 +140,15 @@ class SbbMissoinApplicationTests {
         List<Answer> answerList = q.getAnswerList();
         assertEquals(1, answerList.size());
         assertEquals("네 자동으로 생성됩니다.", answerList.get(0).getContent());
+    }
+
+    @DisplayName("대량 테스트 데이터")
+    @Test
+    void tj1(){
+        for (int i = 0; i <300 ; i++) {
+            String subject= String.format("테스트 데이터:[%03d]",i);
+            String content= "내용";
+            this.questionService.create(subject,content);
+        }
     }
 }
