@@ -26,4 +26,6 @@ public class Answer {
 
     @ManyToOne
     private UserEntity author;
+
+    private LocalDateTime modifyDate;
 }

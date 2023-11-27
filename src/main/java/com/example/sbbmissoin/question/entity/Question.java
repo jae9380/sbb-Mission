@@ -28,4 +28,6 @@ public class Question {
 
     @ManyToOne
     private UserEntity author;
+
+    private LocalDateTime modifyDate;
 }
