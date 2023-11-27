@@ -1,6 +1,7 @@
 package com.example.sbbmissoin.question.entity;
 
 import com.example.sbbmissoin.answer.entity.Answer;
+import com.example.sbbmissoin.user.model.UserEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,4 +25,7 @@ public class Question {
 
     @OneToMany(mappedBy = "question",cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
+
+    @ManyToOne
+    private UserEntity author;
 }

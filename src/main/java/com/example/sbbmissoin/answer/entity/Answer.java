@@ -1,6 +1,7 @@
 package com.example.sbbmissoin.answer.entity;
 
 import com.example.sbbmissoin.question.entity.Question;
+import com.example.sbbmissoin.user.model.UserEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
@@ -22,4 +23,7 @@ public class Answer {
 
     @ManyToOne
     private Question question;
+
+    @ManyToOne
+    private UserEntity author;
 }
