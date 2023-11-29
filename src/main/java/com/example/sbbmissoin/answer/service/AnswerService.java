@@ -16,7 +16,7 @@ import java.util.Optional;
 public class AnswerService {
     private final AnswerRepository answerRepository;
 
-    public void create(
+    public Answer create(
             Question question,
             String content,
             UserEntity author
@@ -27,6 +27,7 @@ public class AnswerService {
         answer.setQuestion(question);
         answer.setAuthor(author);
         this.answerRepository.save(answer);
+        return answer;
     }
 
     public Answer getAnswer(Integer id) {
