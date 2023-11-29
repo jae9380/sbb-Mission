@@ -47,4 +47,9 @@ public class AnswerService {
     public void delete(Answer answer) {
         this.answerRepository.delete(answer);
     }
+
+    public void vote(Answer answer, UserEntity userEntity) {
+        answer.getVoter().add(userEntity);
+        this.answerRepository.save(answer);
+    }
 }

@@ -7,6 +7,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -30,4 +31,7 @@ public class Question {
     private UserEntity author;
 
     private LocalDateTime modifyDate;
+
+    @ManyToMany
+    Set<UserEntity> voter;
 }
